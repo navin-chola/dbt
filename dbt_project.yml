@@ -1,14 +1,14 @@
-name: 'dbt_project'
+name: kc_demo
 version: '1.0'
 
-profile: 'Snowflake'
+profile: 'snowflake_demo'
 
-model-paths: ["models"]
-target-path: "target"
+model-paths: ["kc_demo/models"]
+
 clean-targets: ["target", "dbt_modules"]
 
 models:
-  dbt:
+  kc_demo:
     staging:
       +materialized: table
     marts:
