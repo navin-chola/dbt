@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: raw_customers
+    database: DBT_DB           # Replace with your actual Snowflake database
+    schema: RAW               # Replace with your actual schema
+    tables:
+      - name: customers
+
+models:
+  - name: stg_customers
+    description: "Stage the raw customer data"
+    columns:
+      - name: email
+        tests:
+          - not_null
+
+  - name: mart_customers
+    description: "Final cleaned and joined customer data"
