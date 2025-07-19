@@ -1,12 +1,14 @@
 version: 2
 
+# 🟢 1. Define sources here
 sources:
-  - name: raw_customers
-    database: DBT_DB           # Replace with your actual Snowflake database
-    schema: RAW               # Replace with your actual schema
+  - name: raw
+    database: dbt_db           # Replace with your actual Snowflake database
+    schema: raw                # Replace with your actual schema name
     tables:
       - name: customers
 
+# 🟢 2. Define model descriptions and tests
 models:
   - name: stg_customers
     description: "Stage the raw customer data"
