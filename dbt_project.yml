@@ -4,7 +4,7 @@ version: '1.0'
 profile: 'Snowflake'
 
 model-paths: ["models"]
-target-path: "target"
+target-path: "dbt"
 clean-targets: ["target", "dbt_modules"]
 
 models:
